@@ -1,35 +1,21 @@
-  
-  const eqArrays = function (arr1, arr2) {
-    if (arr1.length !== arr2.length) {
-        return false;
-    }
-    for (let i =0; i<arr1.length; i++) {
-        if (arr1[i] !== arr2 [i]) {
-            return false;
-        }
-        return true; 
-    }
-  }
+const eqArrays = require('./eqArrays');
+const assertArraysEqual = require('./assertArraysEqual');
 
-  function assertArraysEqual (actual, expected) {
-    if (eqArrays === true )  {
-        console.log ("Passed");
-    }
-    else {
-        console.log ("Failed");
+const without = function(source, itemTobeRemoved) {
+  const result = [];
+  for (const items of source) {
+    if (!itemTobeRemoved.includes(items)) {
+      result.push(items);
     }
   }
-  function without (source, itemTobeRemoved) {
-    let newArray = [];
+  return result;
+};
 
-    for (let items of source) {
-        if (! itemTobeRemoved.includes (items)) {
-            newArray.push(items)
-        }
-    }
-    return newArray;
-  }
-console.log (without([1, 2, 3], [1]));
- // => [2, 3]
-console.log (without(["1", "2", "3"], [1, 2, "3"]));
- // => ["1", "2"]
+/*
+//Test codes:
+console.log(without([1, 2, 3], [1])); // => [2, 3]
+console.log(without(["1", "2", "3"], [1, 2, "3"])); // => ["1", "2"]
+const words = ["hello", "world", "lighthouse"];
+without(words, ["lighthouse"]);
+assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+*/

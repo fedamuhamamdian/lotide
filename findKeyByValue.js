@@ -1,26 +1,19 @@
-const assertEqual = function(actual, expected) {
-    if (actual === expected) {
-      console.log ("✅✅✅ Assertion Passed: " + actual + " === " + expected);
-  }
-    else {
-          console.log ("🛑🛑🛑 Assertion Failed: " + actual + " !== " + expected); 
-      }
-  };
-  const findByValue = function (object, value) {
-    for (const key in object) {
-        if (object [key] === value) {
-            return key;
-        }
+const assertEqual = require('./assertEqual');
+const findByValue = function(object, value) {
+  for (const key in object) {
+    if (object [key] === value) {
+      return key;
     }
-    return undefined;
   }
+  return undefined;
+};
 
-const bestTVShowsByGenre = { 
-  sci_fi: "The Expanse",
+const bestTVShowsByGenre = {
+  sciFi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"
 };
 
-assertEqual(findByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
-assertEqual(findByValue(bestTVShowsByGenre, "The Expanse"),"comedy");
+assertEqual(findByValue(bestTVShowsByGenre, "The Wire"), "drama"); //=> shoudl pass
+assertEqual(findByValue(bestTVShowsByGenre, "That '70s Show"), undefined); //=> shoudl pass
+assertEqual(findByValue(bestTVShowsByGenre, "The Expanse"),"sciFi"); //=> shoudl pass
