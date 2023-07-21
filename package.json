@@ -1,0 +1,29 @@
+{
+  "name": "lotide",
+  "version": "1.0.0",
+  "description": "A mini clone of the [Lodash](https://lodash.com) library.",
+  "main": "assertArraysEqual.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fedamuhammadian/lotide.git"
+  },
+  "keywords": [
+    "lotide"
+  ],
+  "author": "feda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fedamuhammadian/lotide/issues"
+  },
+  "homepage": "https://github.com/fedamuhammadian/lotide#readme",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^9.2.2"
+  }
+}
